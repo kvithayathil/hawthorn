@@ -1,0 +1,1089 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Hawthorne MTG</title>
+    <style type="text/css">
+      body {
+	font-family: Trebuchet MS, sans-serif;
+	font-size: 15px;
+	color: #444;
+	margin-right: 24px;
+}
+
+h1	{
+	font-size: 25px;
+}
+h2	{
+	font-size: 20px;
+}
+h3	{
+	font-size: 16px;
+	font-weight: bold;
+}
+hr	{
+	height: 1px;
+	border: 0;
+	color: #ddd;
+	background-color: #ddd;
+}
+
+.app-desc {
+  clear: both;
+  margin-left: 20px;
+}
+.param-name {
+  width: 100%;
+}
+.license-info {
+  margin-left: 20px;
+}
+
+.license-url {
+  margin-left: 20px;
+}
+
+.model {
+  margin: 0 0 0px 20px;
+}
+
+.method {
+  margin-left: 20px;
+}
+
+.method-notes	{
+	margin: 10px 0 20px 0;
+	font-size: 90%;
+	color: #555;
+}
+
+pre {
+  padding: 10px;
+  margin-bottom: 2px;
+}
+
+.http-method {
+ text-transform: uppercase;
+}
+
+pre.get {
+  background-color: #0f6ab4;
+}
+
+pre.post {
+  background-color: #10a54a;
+}
+
+pre.put {
+  background-color: #c5862b;
+}
+
+pre.delete {
+  background-color: #a41e22;
+}
+
+.huge	{
+	color: #fff;
+}
+
+pre.example {
+  background-color: #f3f3f3;
+  padding: 10px;
+  border: 1px solid #ddd;
+}
+
+code {
+  white-space: pre;
+}
+
+.nickname {
+  font-weight: bold;
+}
+
+.method-path {
+  font-size: 1.5em;
+  background-color: #0f6ab4;
+}
+
+.up {
+  float:right;
+}
+
+.parameter {
+  width: 500px;
+}
+
+.param {
+  width: 500px;
+  padding: 10px 0 0 20px;
+  font-weight: bold;
+}
+
+.param-desc {
+  width: 700px;
+  padding: 0 0 0 20px;
+  color: #777;
+}
+
+.param-type {
+  font-style: italic;
+}
+
+.param-enum-header {
+width: 700px;
+padding: 0 0 0 60px;
+color: #777;
+font-weight: bold;
+}
+
+.param-enum {
+width: 700px;
+padding: 0 0 0 80px;
+color: #777;
+font-style: italic;
+}
+
+.field-label {
+  padding: 0;
+  margin: 0;
+  clear: both;
+}
+
+.field-items	{
+	padding: 0 0 15px 0;
+	margin-bottom: 15px;
+}
+
+.return-type {
+  clear: both;
+  padding-bottom: 10px;
+}
+
+.param-header {
+  font-weight: bold;
+}
+
+.method-tags {
+  text-align: right;
+}
+
+.method-tag {
+  background: none repeat scroll 0% 0% #24A600;
+  border-radius: 3px;
+  padding: 2px 10px;
+  margin: 2px;
+  color: #FFF;
+  display: inline-block;
+  text-decoration: none;
+}
+
+    </style>
+  </head>
+  <body>
+  <h1>Hawthorne MTG</h1>
+    <div class="app-desc">:dog: :cat: :rabbit: This is a sample server Petstore server.  You can find out more about Swagger at <a href="http://swagger.io">http://swagger.io</a> or on <a href="http://swagger.io/irc/">irc.freenode.net, #swagger</a>.  For this sample, you can use the api key <code>special-key</code> to test the authorization filters.</div>
+    <div class="app-desc">More information: <a href="https://helloreverb.com">https://helloreverb.com</a></div>
+    <div class="app-desc">Contact Info: <a href="nish.tahir@outlook.com">nish.tahir@outlook.com</a></div>
+    <div class="app-desc">Version: 0.1.0</div>
+    <div class="app-desc">BasePath:/</div>
+    <div class="license-info">Apache 2.0</div>
+    <div class="license-url">http://www.apache.org/licenses/LICENSE-2.0.html</div>
+  <h2>Access</h2>
+  
+    <ol>
+    
+      <li>APIKey KeyParamName:x-api-key KeyInQuery: KeyInHeader:</li>
+    
+    </ol>
+  
+
+  <h2><a name="__Methods">Methods</a></h2>
+  [ Jump to <a href="#__Models">Models</a> ]
+
+  
+  <h3>Table of Contents </h3>
+  <div class="method-summary"></div>
+  
+  
+  
+  <h4><a href="#Default">Default</a></h4>
+  <ul>
+  
+  <li><a href="#deckIdGet"><code><span class="http-method">get</span> /deck/{id}</code></a></li>
+  
+  <li><a href="#deckPost"><code><span class="http-method">post</span> /deck</code></a></li>
+  
+  <li><a href="#deckPut"><code><span class="http-method">put</span> /deck</code></a></li>
+  
+  <li><a href="#decksGet"><code><span class="http-method">get</span> /decks</code></a></li>
+  
+  <li><a href="#gameIdGet"><code><span class="http-method">get</span> /game/{id}</code></a></li>
+  
+  <li><a href="#gamePost"><code><span class="http-method">post</span> /game</code></a></li>
+  
+  <li><a href="#gamesGet"><code><span class="http-method">get</span> /games</code></a></li>
+  
+  <li><a href="#loginPost"><code><span class="http-method">post</span> /login</code></a></li>
+  
+  <li><a href="#playerIdPost"><code><span class="http-method">post</span> /player/{id}</code></a></li>
+  
+  <li><a href="#playerPost"><code><span class="http-method">post</span> /player</code></a></li>
+  
+  <li><a href="#playerPut"><code><span class="http-method">put</span> /player</code></a></li>
+  
+  <li><a href="#playersGet"><code><span class="http-method">get</span> /players</code></a></li>
+  
+  </ul>
+  
+  
+  
+
+  
+  
+  
+  <h1><a name="Default">Default</a></h1>
+  
+  <div class="method"><a name="deckIdGet"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /deck/{id}</code></pre></div>
+    <div class="method-summary">Get details on a specific deck (<span class="nickname">deckIdGet</span>)</div>
+    
+    <div class="method-notes"></div>
+
+    
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">id (required)</div>
+
+      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; Deck Id </div>
+    </div>  <!-- field-items -->
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      
+      Deck
+    </div>
+    
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    
+
+    
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+    
+      <li><code>application/json</code></li>
+    
+    </ul>
+    
+
+    <h3 class="field-label">Responses</h3>
+    
+    <h4 class="field-label">200</h4>
+    Data for the newly created deck
+        
+    
+    
+  </div> <!-- method -->
+  <hr/>
+  
+  <div class="method"><a name="deckPost"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="post"><code class="huge"><span class="http-method">post</span> /deck</code></pre></div>
+    <div class="method-summary">Create a new deck (<span class="nickname">deckPost</span>)</div>
+    
+    <div class="method-notes">Create a new deck for a player</div>
+
+    
+
+    
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="header">Content-Type</span> request header:
+    <ul>
+    
+      <li><code>application/json</code></li>
+    
+    </ul>
+    
+
+    
+    <h3 class="field-label">Request body</h3>
+    <div class="field-items">
+      <div class="param">body  (required)</div>
+
+      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash;  </div>
+
+    </div>  <!-- field-items -->
+    
+
+    
+
+    
+
+    
+
+    
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      
+      Deck
+    </div>
+    
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    
+
+    
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+    
+      <li><code>application/json</code></li>
+    
+    </ul>
+    
+
+    <h3 class="field-label">Responses</h3>
+    
+    <h4 class="field-label">200</h4>
+    Data for the newly created deck
+        
+    
+    
+  </div> <!-- method -->
+  <hr/>
+  
+  <div class="method"><a name="deckPut"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="put"><code class="huge"><span class="http-method">put</span> /deck</code></pre></div>
+    <div class="method-summary">Update an existing deck (<span class="nickname">deckPut</span>)</div>
+    
+    <div class="method-notes">Update the alias or commander of a deck</div>
+
+    
+
+    
+
+    
+    <h3 class="field-label">Request body</h3>
+    <div class="field-items">
+      <div class="param">body <a href="#object">object</a> (required)</div>
+
+      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash;  </div>
+
+    </div>  <!-- field-items -->
+    
+
+    
+
+    
+
+    
+
+    
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      
+      DeckSummary
+    </div>
+    
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    
+
+    
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+    
+      <li><code>application/json</code></li>
+    
+    </ul>
+    
+
+    <h3 class="field-label">Responses</h3>
+    
+    <h4 class="field-label">200</h4>
+    Response
+        
+    
+    
+  </div> <!-- method -->
+  <hr/>
+  
+  <div class="method"><a name="decksGet"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /decks</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">decksGet</span>)</div>
+    
+    <div class="method-notes"></div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      
+      array[Deck]
+    </div>
+    
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    
+
+    
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+    
+      <li><code>application/json</code></li>
+    
+    </ul>
+    
+
+    <h3 class="field-label">Responses</h3>
+    
+    <h4 class="field-label">200</h4>
+    List of available decks
+        
+    
+    
+  </div> <!-- method -->
+  <hr/>
+  
+  <div class="method"><a name="gameIdGet"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /game/{id}</code></pre></div>
+    <div class="method-summary">Fetch a played game (<span class="nickname">gameIdGet</span>)</div>
+    
+    <div class="method-notes"></div>
+
+    
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">id (required)</div>
+
+      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash;  format: int64</div>
+    </div>  <!-- field-items -->
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      
+      GameDetail
+    </div>
+    
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    
+
+    
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+    
+      <li><code>application/json</code></li>
+    
+    </ul>
+    
+
+    <h3 class="field-label">Responses</h3>
+    
+    <h4 class="field-label">200</h4>
+    Game result detail
+        
+    
+    
+  </div> <!-- method -->
+  <hr/>
+  
+  <div class="method"><a name="gamePost"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="post"><code class="huge"><span class="http-method">post</span> /game</code></pre></div>
+    <div class="method-summary">Create a new game (<span class="nickname">gamePost</span>)</div>
+    
+    <div class="method-notes"></div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      
+      GameDetail
+    </div>
+    
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    
+
+    
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+    
+      <li><code>application/json</code></li>
+    
+    </ul>
+    
+
+    <h3 class="field-label">Responses</h3>
+    
+    <h4 class="field-label">200</h4>
+    Game result detail
+        
+    
+    
+  </div> <!-- method -->
+  <hr/>
+  
+  <div class="method"><a name="gamesGet"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /games</code></pre></div>
+    <div class="method-summary">Get a list of games (<span class="nickname">gamesGet</span>)</div>
+    
+    <div class="method-notes"></div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      
+      array[Object]
+    </div>
+    
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    
+
+    
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+    
+      <li><code>application/json</code></li>
+    
+    </ul>
+    
+
+    <h3 class="field-label">Responses</h3>
+    
+    <h4 class="field-label">200</h4>
+    list of games
+        
+    
+    
+  </div> <!-- method -->
+  <hr/>
+  
+  <div class="method"><a name="loginPost"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="post"><code class="huge"><span class="http-method">post</span> /login</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">loginPost</span>)</div>
+    
+    <div class="method-notes"></div>
+
+    
+
+    
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="header">Content-Type</span> request header:
+    <ul>
+    
+      <li><code>application/json</code></li>
+    
+    </ul>
+    
+
+    
+    <h3 class="field-label">Request body</h3>
+    <div class="field-items">
+      <div class="param">body <a href="#object">object</a> (required)</div>
+
+      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash;  </div>
+
+    </div>  <!-- field-items -->
+    
+
+    
+
+    
+
+    
+
+    
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      
+      Object
+    </div>
+    
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    
+
+    
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+    
+      <li><code>application/json</code></li>
+    
+    </ul>
+    
+
+    <h3 class="field-label">Responses</h3>
+    
+    <h4 class="field-label">200</h4>
+    Token
+        
+    
+    
+  </div> <!-- method -->
+  <hr/>
+  
+  <div class="method"><a name="playerIdPost"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="post"><code class="huge"><span class="http-method">post</span> /player/{id}</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">playerIdPost</span>)</div>
+    
+    <div class="method-notes"></div>
+
+    
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">id (required)</div>
+
+      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash;  format: int64</div>
+    </div>  <!-- field-items -->
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      
+      Object
+    </div>
+    
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    
+
+    
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+    
+      <li><code>application/json</code></li>
+    
+    </ul>
+    
+
+    <h3 class="field-label">Responses</h3>
+    
+    <h4 class="field-label">200</h4>
+    list of decks associated from to a player
+        
+    
+    
+  </div> <!-- method -->
+  <hr/>
+  
+  <div class="method"><a name="playerPost"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="post"><code class="huge"><span class="http-method">post</span> /player</code></pre></div>
+    <div class="method-summary">Create a new player (<span class="nickname">playerPost</span>)</div>
+    
+    <div class="method-notes">Add a new player to the ELO</div>
+
+    
+
+    
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="header">Content-Type</span> request header:
+    <ul>
+    
+      <li><code>application/json</code></li>
+    
+    </ul>
+    
+
+    
+    <h3 class="field-label">Request body</h3>
+    <div class="field-items">
+      <div class="param">body  (required)</div>
+
+      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash;  </div>
+
+    </div>  <!-- field-items -->
+    
+
+    
+
+    
+
+    
+
+    
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      
+      Object
+    </div>
+    
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    
+
+    
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+    
+      <li><code>application/json</code></li>
+    
+    </ul>
+    
+
+    <h3 class="field-label">Responses</h3>
+    
+    <h4 class="field-label">200</h4>
+    Response
+        
+    
+    
+  </div> <!-- method -->
+  <hr/>
+  
+  <div class="method"><a name="playerPut"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="put"><code class="huge"><span class="http-method">put</span> /player</code></pre></div>
+    <div class="method-summary">Update an existing player (<span class="nickname">playerPut</span>)</div>
+    
+    <div class="method-notes">Update the alias or email of a player</div>
+
+    
+
+    
+
+    
+    <h3 class="field-label">Request body</h3>
+    <div class="field-items">
+      <div class="param">body <a href="#object">object</a> (required)</div>
+
+      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash;  </div>
+
+    </div>  <!-- field-items -->
+    
+
+    
+
+    
+
+    
+
+    
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      
+      PlayerInfo
+    </div>
+    
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    
+
+    
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+    
+      <li><code>application/json</code></li>
+    
+    </ul>
+    
+
+    <h3 class="field-label">Responses</h3>
+    
+    <h4 class="field-label">200</h4>
+    Response
+        
+    
+    
+  </div> <!-- method -->
+  <hr/>
+  
+  <div class="method"><a name="playersGet"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /players</code></pre></div>
+    <div class="method-summary">Get a list of players (<span class="nickname">playersGet</span>)</div>
+    
+    <div class="method-notes"></div>
+
+    
+
+    
+
+    
+
+    
+    <h3 class="field-label">Request headers</h3>
+    <div class="field-items">
+      
+    </div>  <!-- field-items -->
+    
+
+    
+
+    
+
+    
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      
+      array[Object]
+    </div>
+    
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    
+
+    
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+    
+      <li><code>application/json</code></li>
+    
+    </ul>
+    
+
+    <h3 class="field-label">Responses</h3>
+    
+    <h4 class="field-label">200</h4>
+    list of players
+        
+    
+    
+  </div> <!-- method -->
+  <hr/>
+  
+  
+  
+  
+
+  <h2><a name="__Models">Models</a></h2>
+  [ Jump to <a href="#__Methods">Methods</a> ]
+
+  <h3>Table of Contents</h3>
+  <ol>
+  
+  
+    <li><a href="#Deck"><code>Deck</code></a></li>
+  
+  
+  
+    <li><a href="#DeckSummary"><code>DeckSummary</code></a></li>
+  
+  
+  
+    <li><a href="#GameDetail"><code>GameDetail</code></a></li>
+  
+  
+  
+    <li><a href="#Participant"><code>Participant</code></a></li>
+  
+  
+  
+    <li><a href="#PlayerInfo"><code>PlayerInfo</code></a></li>
+  
+  
+  </ol>
+
+  
+  
+  <div class="model">
+    <h3><a name="Deck"><code>Deck</code></a> <a class="up" href="#__Models">Up</a></h3>
+    
+    <div class="field-items">
+      <div class="param">id (optional)</div><div class="param-desc"><span class="param-type"><a href="#long">Long</a></span>  format: int64</div>
+      
+      <div class="param">alias (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+      
+      <div class="param">commander (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+      
+      <div class="param">games (optional)</div><div class="param-desc"><span class="param-type"><a href="#long">Long</a></span>  format: int64</div>
+      
+      <div class="param">wins (optional)</div><div class="param-desc"><span class="param-type"><a href="#long">Long</a></span>  format: int64</div>
+      
+      <div class="param">elo (optional)</div><div class="param-desc"><span class="param-type"><a href="#double">Double</a></span>  format: double</div>
+      
+      
+    </div>  <!-- field-items -->
+  </div>
+  
+  
+  
+  <div class="model">
+    <h3><a name="DeckSummary"><code>DeckSummary</code></a> <a class="up" href="#__Models">Up</a></h3>
+    
+    <div class="field-items">
+      <div class="param">id (optional)</div><div class="param-desc"><span class="param-type"><a href="#long">Long</a></span>  format: int64</div>
+      
+      <div class="param">alias (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+      
+      <div class="param">commander (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+      
+      
+    </div>  <!-- field-items -->
+  </div>
+  
+  
+  
+  <div class="model">
+    <h3><a name="GameDetail"><code>GameDetail</code></a> <a class="up" href="#__Models">Up</a></h3>
+    
+    <div class="field-items">
+      <div class="param">id (optional)</div><div class="param-desc"><span class="param-type"><a href="#long">Long</a></span>  format: int64</div>
+      
+      <div class="param">time_stamp (optional)</div><div class="param-desc"><span class="param-type"><a href="#double">Double</a></span>  format: double</div>
+      
+      <div class="param">participants (optional)</div><div class="param-desc"><span class="param-type"><a href="#Participant">array[Participant]</a></span>  </div>
+      
+      
+    </div>  <!-- field-items -->
+  </div>
+  
+  
+  
+  <div class="model">
+    <h3><a name="Participant"><code>Participant</code></a> <a class="up" href="#__Models">Up</a></h3>
+    
+    <div class="field-items">
+      <div class="param">deck_id (optional)</div><div class="param-desc"><span class="param-type"><a href="#long">Long</a></span>  format: int64</div>
+      
+      <div class="param">elo (optional)</div><div class="param-desc"><span class="param-type"><a href="#double">Double</a></span>  format: double</div>
+      
+      
+    </div>  <!-- field-items -->
+  </div>
+  
+  
+  
+  <div class="model">
+    <h3><a name="PlayerInfo"><code>PlayerInfo</code></a> <a class="up" href="#__Models">Up</a></h3>
+    
+    <div class="field-items">
+      <div class="param">id </div><div class="param-desc"><span class="param-type"><a href="#long">Long</a></span>  format: int64</div>
+      
+      <div class="param">alias (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+      
+      <div class="param">email (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  format: email</div>
+      
+      
+    </div>  <!-- field-items -->
+  </div>
+  
+  
+  </body>
+</html>
